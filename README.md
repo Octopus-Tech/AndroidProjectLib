@@ -1,2 +1,1 @@
-# AndroidProjectLib
-Android common Library
+AndroidLibrary

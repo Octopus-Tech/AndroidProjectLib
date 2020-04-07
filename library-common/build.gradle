@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion "$buildToolsVersion"
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        resourcePrefix 'com_'
+        // lib module 混淆配置
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    buildTypes {
+        release {}
+        prerelease {}
+        beta {}
+        debug {}
+    }
+}
+
+dependencies {
+    api fileTree(include: '*.jar', dir: 'libs')
+    api "com.android.support:support-v4:$supportLibVersion"
+    api "com.android.support:appcompat-v7:$supportLibVersion"
+    // SnackBar
+    api "com.android.support:design:$supportLibVersion"
+    // eventbus
+    api 'org.greenrobot:eventbus:3.0.0'
+    // rx support
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    api 'io.reactivex.rxjava2:rxjava:2.1.0'
+    // retrofit2 support
+    api 'com.squareup.retrofit2:retrofit:2.1.0'
+    api 'com.squareup.retrofit2:converter-gson:2.1.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    // RecyclerView support
+    api "com.android.support:recyclerview-v7:$supportLibVersion"
+    // RecyclerViewDivider：https://github.com/Fondesa/RecyclerViewDivider
+    api 'com.github.fondesa:recycler-view-divider:2.0.0'
+    // butterknife
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // https://github.com/orhanobut/logger
+    implementation 'com.orhanobut:logger:2.1.1'
+    // SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
+    // glide
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    // glide-transformations
+    api ('jp.wasabeef:glide-transformations:3.1.1')
+    {
+        exclude  group:'com.github.bumptech.glide'
+    }
+    // mmkv
+    api 'com.tencent:mmkv:1.0.10'
+    // statusbarutil
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+}
+

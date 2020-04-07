@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 全屏幕透明样式 -->
+    <style name="com_TransparentFullScreenTheme" parent="@style/com_TransparentTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="com_FullScreenTheme" parent="@style/com_AppTheme">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!-- 透明样式 -->
+    <style name="com_TransparentTheme" parent="@style/com_AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- App theme -->
+    <style name="com_AppTheme" parent="@style/com_BaseAppTheme"></style>
+    
+    <!-- 公共属性-->
+    <style name="com_BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <style name="com_SwipeBackLayout">
+        <item name="com_edge_size">50dp</item>
+        <item name="com_shadow_left">@drawable/shadow_left</item>
+        <item name="com_shadow_right">@drawable/shadow_right</item>
+        <item name="com_shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+</resources>
