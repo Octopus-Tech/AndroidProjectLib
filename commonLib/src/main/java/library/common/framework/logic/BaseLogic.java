@@ -20,6 +20,7 @@ import retrofit2.Retrofit;
  * @version [AndroidLibrary, 2018-3-6]
  */
 public abstract class BaseLogic extends EventLogic {
+
     protected Retrofit retrofit;
     private IRetryHandler retryHandler;
 
